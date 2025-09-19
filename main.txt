@@ -1,0 +1,94 @@
+OnCommand b 0 !kcreset
+Chat Send "Kruiz Control Resetting"
+Reset
+
+#Post to Discord when stream starts
+OnOBSStreamStarted
+Twitch ChannelInfo
+#Post in Harrier Hub
+Discord Title "Harrier Hub" "SpacedHarrier on Twitch"
+Discord Description "Harrier Hub" "{title}"
+Discord Image "Harrier Hub" "https://panels.twitch.tv/panel-168537275-image-c21d7b60-18f1-4c3a-a93d-d7838dc2f6bc"
+Discord Url "Harrier Hub" "https://twitch.tv/spacedharrier"
+Discord Message "Harrier Hub" "SpacedHarrier is now live on Twitch! He is streaming {game}!"
+Discord Send "Harrier Hub"
+
+OnCommand bm 0 !so !shout !shoutout
+Twitch ChannelInfo {arg1}
+Chat Send "Please check out {name}! They last streamed {game}! https://twitch.tv/{name}"
+
+OnTWHypeTrainStart
+Play 100 nowait bonuslevel2.wav
+
+OnTWFollow
+Play 150 nowait sms_chime.wav
+
+OnTWSub
+Play 200 nowait emerald3.ogg
+
+OnTWSubMessage
+Play 200 nowait emerald3.ogg
+
+OnTWSubGift
+Play 200 nowait emerald3.ogg
+
+OnTWRaid
+Play 100 nowait welcome3.ogg
+
+OnTWCheer
+Play 200 nowait chaching2.ogg
+
+OnTWCharityDonation
+Play 200 nowait chaching2.ogg
+
+OnCommand b 0 !testcmd
+Chat Send "Debug!"
+Discord Title "Harrier Hub" "Testing Kruiz Control! Please ignore!"
+Discord Description "Harrier Hub" "Testing Kruiz Control! Please ignore!"
+Discord Image "Harrier Hub" "https://panels.twitch.tv/panel-168537275-image-c21d7b60-18f1-4c3a-a93d-d7838dc2f6bc"
+Discord Url "Harrier Hub" "https://twitch.tv/spacedharrier"
+Discord Message "Harrier Hub" "Testing Kruiz Control! Please ignore!"
+Discord Send "Harrier Hub"
+
+OnCommand e 60 !lurk
+Chat Send "Thanks for the lurk, {user}! Enjoy!"
+
+OnCommand b 0 !raid
+Chat Send "spaced99Harrier You're doing great! spaced99Harrier"
+Chat Send "KomodoHype You're doing great! KomodoHype"
+
+OnCommand e 60 !discord
+Variable Load Discord
+Chat Send "{Discord}"
+
+OnCommand e 60 !sub !subs !subscribe !gift !giftsub
+Chat Send "https://subs.twitch.tv/spacedharrier"
+
+OnTimer TimerSwear 60
+Variable Load SwearMinsLeft
+If {SwearMinsLeft} > 0
+Param Subtract SwearMinsLeft 1
+Variable Set SwearMinsLeft {SwearMinsLeft}
+Chat Send "{SwearMinsLeft} minute(s) left for Swear Jar!"
+If 1 {SwearMinsLeft} <= 0
+Timer Stop TimerSwear
+
+OnTimer TimerToast 60
+Variable Load ToastMinsLeft
+If {ToastMinsLeft} > 0
+Param Subtract ToastMinsLeft 1
+Variable Set ToastMinsLeft {ToastMinsLeft}
+Chat Send "{ToastMinsLeft} minute(s) left for Toastmaster Tim!"
+If 1 {ToastMinsLeft} <= 0
+Timer Stop TimerToast
+
+#Cycle through Spam Messages
+OnTimer SpamTimer 2700
+Variable Load CurSpam
+List Get SpamList {CurSpam}
+Chat Send {value}
+Param Add CurSpam 1
+Variable Set CurSpam {CurSpam}
+List Count SpamList
+If 1 {CurSpam} = {count}
+Variable Set CurSpam 0

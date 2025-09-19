@@ -1,0 +1,94 @@
+#Channel Points
+
+OnTWChannelPoint "Be careful!"
+Play 100 nowait becareful.mp3
+
+OnTWChannelPoint "Good job!"
+Play 100 nowait gj.mp3
+
+OnTWChannelPoint "Hit!"
+Play 100 nowait hit.mp3
+
+OnTWChannelPoint "You've got mail!"
+Play 100 nowait mail.mp3
+
+OnTWChannelPoint "Oh no!"
+Play 100 nowait ohno.mp3
+
+OnTWChannelPoint "Wow!"
+Play 100 nowait wow.mp3
+
+OnTWChannelPoint "The lines gonna break!"
+Play 100 nowait gonnabreak.mp3
+
+OnTWChannelPoint "Good fish!"
+Play 100 nowait goodfish.wav
+
+OnTWChannelPoint "OAH!"
+Play 100 nowait oah.wav
+
+OnTWChannelPoint "Swear Jar"
+Play 100 nowait fudge.mp3
+Timer Start TimerSwear
+Variable Set SwearMinsLeft 5
+Chat Send "Swear Jar timer set to {SwearMinsLeft} minutes!"
+
+OnTWChannelPoint "Toastmaster Tim"
+Play 100 nowait toasty.wav
+Timer Start TimerToast
+Variable Set ToastMinsLeft 5
+Chat Send "Toastmaster Tim timer set to {ToastMinsLeft} minutes!"
+
+OnTWChannelPoint "Dadgummit!"
+Play 100 nowait dadgummit.wav
+
+OnTWChannelPoint "Sub Lotto"
+Play 100 nowait lotto.mp3
+
+OnTWChannelPoint "Deploy Cat Ears"
+Play 100 nowait meow.wav
+
+OnTWChannelPoint "Excite"
+Play 100 nowait shiba.wav
+
+OnTWChannelPoint "Break time!"
+Play 100 nowait breaktime.wav
+
+OnTWChannelPoint "Sega fact"
+Play 100 nowait sega.wav
+
+OnTWChannelPoint "Hey Broski!"
+Play 100 nowait broski.wav
+
+OnTWChannelPoint "Nonononono!"
+Play 100 nowait miku_disgust.wav
+
+OnTWChannelPoint "Hank Hill voice"
+Play 100 nowait goodlord.wav
+
+OnTWChannelPoint "Oh, Jesus!"
+Play 50 nowait miku_ohjesus3.wav
+
+OnTWChannelPoint "Nerd voice"
+Play 100 nowait nerdvoice.wav
+
+OnTWChannelPoint "Awesome!"
+Play 100 nowait awesome.wav
+
+OnTWChannelPoint "Cool!"
+Play 100 nowait cool.wav
+
+OnTWChannelPoint "Hallelujah!"
+Play 100 nowait hallelujah.wav
+
+OnTWChannelPoint "Hydrate!"
+Play 100 nowait h2o.wav
+
+OnTWChannelPoint "Angery"
+Play 100 nowait angry.wav
+
+OnTWChannelPoint "Giggity!"
+Play 100 nowait giggity.wav
+
+OnTWChannelPoint "Not getting away!"
+Play 100 nowait notgettingaway.wav

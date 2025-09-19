@@ -1,0 +1,11 @@
+OnInit
+#secrets.txt begins with "OnAction SetSecretVariables" and sets some variables. The following line runs calls that action.
+Action SetSecretVariables
+Variable Load DiscordWebhook
+Variable Load Discord
+#Set up my Discord webhook for posting go-live announcements
+Discord Create "Harrier Hub" {DiscordWebhook}
+#Set up list of regularly scheduled bot announcements and set the current index to 0
+List Add SpamList "Closed captioning is available!"
+List Add SpamList "Let's chat on Discord! {Discord}"
+Variable Set CurSpam 0
