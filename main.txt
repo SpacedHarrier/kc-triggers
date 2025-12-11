@@ -5,7 +5,6 @@ Reset
 #Post to Discord when stream starts
 OnOBSStreamStarted
 Twitch ChannelInfo
-#Post in Harrier Hub
 Discord Title "Harrier Hub" "SpacedHarrier on Twitch"
 Discord Description "Harrier Hub" "{title}"
 Discord Image "Harrier Hub" "https://panels.twitch.tv/panel-168537275-image-c21d7b60-18f1-4c3a-a93d-d7838dc2f6bc"
@@ -48,6 +47,14 @@ Discord Description "Harrier Hub" "Testing Kruiz Control! Please ignore!"
 Discord Image "Harrier Hub" "https://panels.twitch.tv/panel-168537275-image-c21d7b60-18f1-4c3a-a93d-d7838dc2f6bc"
 Discord Url "Harrier Hub" "https://twitch.tv/spacedharrier"
 Discord Message "Harrier Hub" "Testing Kruiz Control! Please ignore!"
+Discord Send "Harrier Hub"
+
+OnCommand b 0 !announce
+Discord Title "Harrier Hub" "SpacedHarrier on Twitch"
+Discord Description "Harrier Hub" "{title}"
+Discord Image "Harrier Hub" "https://panels.twitch.tv/panel-168537275-image-c21d7b60-18f1-4c3a-a93d-d7838dc2f6bc"
+Discord Url "Harrier Hub" "https://twitch.tv/spacedharrier"
+Discord Message "Harrier Hub" "SpacedHarrier is now live on Twitch! He is streaming {game}!"
 Discord Send "Harrier Hub"
 
 OnCommand e 60 !lurk
